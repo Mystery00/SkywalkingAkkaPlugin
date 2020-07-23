@@ -10,7 +10,11 @@ public class AkkaMessage<T> implements Serializable {
     private T data;
     private String traceId;
 
-    public AkkaMessage(T data) {
+    public static <T> AkkaMessage<T> ofData(T data) {
+        return new AkkaMessage<>(data);
+    }
+
+    private AkkaMessage(T data) {
         this.data = data;
     }
 
