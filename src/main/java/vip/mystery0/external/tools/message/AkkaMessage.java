@@ -16,14 +16,15 @@ public class AkkaMessage<T> implements Serializable {
 
     public AkkaMessage(T data) {
         this.data = data;
-        this.traceId = MDC.get(Constants.MDC_TRACE_ID);
         captureTrace();
     }
 
     public void captureTrace() {
+        this.traceId = MDC.get(Constants.MDC_TRACE_ID);
     }
 
     public void restoreTrace() {
+        MDC.put(Constants.MDC_TRACE_ID, this.traceId);
     }
 
     public T getData() {
