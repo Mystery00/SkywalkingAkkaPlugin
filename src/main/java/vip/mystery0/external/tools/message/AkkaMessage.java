@@ -11,11 +11,9 @@ public class AkkaMessage<T> implements Serializable {
     private String traceId;
 
     public static <T> AkkaMessage<T> ofData(T data) {
-        return new AkkaMessage<>(data);
-    }
-
-    private AkkaMessage(T data) {
-        this.data = data;
+        AkkaMessage<T> akkaMessage = new AkkaMessage<>();
+        akkaMessage.setData(data);
+        return akkaMessage;
     }
 
     public T getData() {
