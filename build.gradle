@@ -10,4 +10,6 @@ repositories {
 }
 
 dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.30'
+    compile 'com.typesafe.akka:akka-actor_2.12:2.5.22'
 }
