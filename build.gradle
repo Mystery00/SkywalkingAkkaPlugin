@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group 'vip.mystery0.external'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.30'
+}
